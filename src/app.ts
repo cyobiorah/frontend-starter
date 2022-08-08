@@ -18,23 +18,35 @@ const startApp = async () => {
 
   getData();
 
+  //   function populateTable(data) {
+  //     function addCell(tr, text) {
+  //       console.log(tr.getCell[0]);
+  //       var td = tr.insertCell();
+  //       td.textContent = text;
+  //       return td;
+  //     }
+
+  //     // table.innerHTML = "";
+
+  //     data[page]?.forEach((res, index) => {
+  //       let row = table.insertRow();
+  //       let row1 = table.rows[index];
+  //       row.setAttribute("data-entryid", res.id);
+  //       addCell(row1, res.row);
+  //       addCell(row1, res.gender);
+  //       addCell(row1, res.age);
+  //     });
+
+  //     label.innerHTML = `Showing Page ${page}`;
+  //     label.setAttribute("data-pageview", `Showing Page ${page}`);
+  //   }
+
   function populateTable(data) {
-    function addCell(tr, text) {
-      var td = tr.insertCell();
-      td.textContent = text;
-      return td;
-    }
-
-    table.innerHTML = "";
-
-    data[page]?.forEach((res) => {
-      //   console.log(res);
-      let row = table.insertRow();
-      row.id = res.id;
-      row.setAttribute("data-entryid", res.id);
-      addCell(row, res.row);
-      addCell(row, res.gender);
-      addCell(row, res.age);
+    data[page].forEach((res, index) => {
+      table.rows[index].setAttribute("data-entryid", res.id);
+      table.rows[index].cells[0].innerHTML = res.row;
+      table.rows[index].cells[1].innerHTML = res.gender;
+      table.rows[index].cells[2].innerHTML = res.age;
     });
     label.innerHTML = `Showing Page ${page}`;
     label.setAttribute("data-pageview", `Showing Page ${page}`);
@@ -60,7 +72,6 @@ const startApp = async () => {
     await fetch(url + page)
       .then((res) => res.json())
       .then((result) => {
-        // console.log(result);
         info = result.info;
         results = result.results[0];
         populateTable(results);
