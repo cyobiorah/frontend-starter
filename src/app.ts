@@ -91,14 +91,18 @@ const startApp = async () => {
   //     },
   //   };
 
-  let table = document.getElementById("table-body") as HTMLTableElement;
-  const previousBtn = document.getElementById("previous") as HTMLButtonElement;
-  const nextBtn = document.getElementById("next") as HTMLButtonElement;
+  let table = document.querySelector("[data-sink") as HTMLTableElement;
+  const previousBtn = document.querySelector(
+    "[data-prevbtn]"
+  ) as HTMLButtonElement;
+  const nextBtn = document.querySelector("[data-nextbtn]") as HTMLButtonElement;
+  const label = document.querySelector("[data-pageview]") as HTMLElement;
 
   nextBtn.addEventListener("click", nextClicked);
   previousBtn.addEventListener("click", previousClicked);
 
   getData();
+  console.log(label);
 
   function populateTable(data) {
     function addCell(tr, text) {
@@ -110,6 +114,7 @@ const startApp = async () => {
     table.innerHTML = "";
 
     data[page]?.forEach((res) => {
+      //   console.log(res);
       let row = table.insertRow();
       row.id = res.id;
       row.setAttribute("data-entryid", res.id);
@@ -117,6 +122,7 @@ const startApp = async () => {
       addCell(row, res.gender);
       addCell(row, res.age);
     });
+    label.innerHTML = `Showing Page ${page}`;
   }
 
   function nextClicked() {
