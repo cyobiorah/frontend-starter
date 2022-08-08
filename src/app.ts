@@ -4,6 +4,8 @@ const startApp = async () => {
   let results;
   let url = `https://randomapi.com/api/8csrgnjw?key=LEIX-GF3O-AG7I-6J84&page=`;
 
+  getData();
+
   let table = document.querySelector("tbody[data-sink") as HTMLTableElement;
   const previousBtn = document.querySelector(
     "button[data-prevbtn]"
@@ -15,31 +17,6 @@ const startApp = async () => {
 
   nextBtn.addEventListener("click", nextClicked);
   previousBtn.addEventListener("click", previousClicked);
-
-  getData();
-
-  //   function populateTable(data) {
-  //     function addCell(tr, text) {
-  //       console.log(tr.getCell[0]);
-  //       var td = tr.insertCell();
-  //       td.textContent = text;
-  //       return td;
-  //     }
-
-  //     // table.innerHTML = "";
-
-  //     data[page]?.forEach((res, index) => {
-  //       let row = table.insertRow();
-  //       let row1 = table.rows[index];
-  //       row.setAttribute("data-entryid", res.id);
-  //       addCell(row1, res.row);
-  //       addCell(row1, res.gender);
-  //       addCell(row1, res.age);
-  //     });
-
-  //     label.innerHTML = `Showing Page ${page}`;
-  //     label.setAttribute("data-pageview", `Showing Page ${page}`);
-  //   }
 
   function populateTable(data) {
     data[page].forEach((res, index) => {
@@ -83,7 +60,4 @@ const startApp = async () => {
   }
 };
 
-document.addEventListener("DOMContentLoaded", async () => {
-  console.log("dom content loaded");
-  await startApp();
-});
+document.addEventListener("DOMContentLoaded", startApp);
