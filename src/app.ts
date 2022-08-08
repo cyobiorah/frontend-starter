@@ -64,7 +64,11 @@ const startApp = () => {
 };
 
 // document.addEventListener("DOMContentLoaded", startApp);
-document.addEventListener("DOMContentLoaded", () => {
+// window.addEventListener("DOMContentLoaded", () => {
+//   startApp();
+//   console.log("starting app");
+// });
+
+window.onload = () => {
   startApp();
-  console.log("starting app");
-});
+};
