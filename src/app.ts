@@ -49,7 +49,7 @@ const startApp = () => {
     await fetch(url + page)
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
+        // console.log(result);
         info = result.info;
         results = result.results[0];
         populateTable(results);
@@ -63,12 +63,6 @@ const startApp = () => {
   getData();
 };
 
-// document.addEventListener("DOMContentLoaded", startApp);
-// window.addEventListener("DOMContentLoaded", () => {
-//   startApp();
-//   console.log("starting app");
-// });
+document.addEventListener("DOMContentLoaded", startApp);
 
-window.onload = () => {
-  startApp();
-};
+// window.addEventListener("load", () => startApp());
