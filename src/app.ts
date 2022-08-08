@@ -4,8 +4,6 @@ const startApp = async () => {
   let results;
   let url = `https://randomapi.com/api/8csrgnjw?key=LEIX-GF3O-AG7I-6J84&page=`;
 
-  getData();
-
   let table = document.querySelector("tbody[data-sink") as HTMLTableElement;
   const previousBtn = document.querySelector(
     "button[data-prevbtn]"
@@ -58,6 +56,8 @@ const startApp = async () => {
         console.log(err);
       });
   }
+
+  getData();
 };
 
 document.addEventListener("DOMContentLoaded", startApp);
