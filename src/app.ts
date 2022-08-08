@@ -112,6 +112,7 @@ const startApp = async () => {
     data[page]?.forEach((res) => {
       let row = table.insertRow();
       row.id = res.id;
+      row.setAttribute("data-entryid", res.id);
       addCell(row, res.row);
       addCell(row, res.gender);
       addCell(row, res.age);
