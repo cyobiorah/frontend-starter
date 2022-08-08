@@ -37,6 +37,7 @@ const startApp = async () => {
       addCell(row, res.age);
     });
     label.innerHTML = `Showing Page ${page}`;
+    label.setAttribute("data-pageview", `Showing Page ${page}`);
   }
 
   function nextClicked() {
@@ -71,4 +72,7 @@ const startApp = async () => {
   }
 };
 
-document.addEventListener("DOMContentLoaded", startApp);
+document.addEventListener("DOMContentLoaded", async () => {
+  console.log("dom content loaded");
+  await startApp();
+});
