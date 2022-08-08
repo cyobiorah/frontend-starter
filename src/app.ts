@@ -63,6 +63,21 @@ const startApp = () => {
   getData();
 };
 
-document.addEventListener("DOMContentLoaded", startApp);
+// document.addEventListener("DOMContentLoaded", startApp);
 
-// window.addEventListener("load", () => startApp());
+var ua = navigator.userAgent.toLowerCase();
+var isIE = /msie/.test(ua);
+if (isIE) {
+  // play it safe, very few users, exec ur JS when all resources are loaded
+  window.onload = function () {
+    startApp();
+  };
+} else {
+  // add event listener to trigger your function when DOMContentLoaded
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", startApp);
+  } else {
+    // DOMContentLoaded already loaded, so better trigger your function
+    startApp();
+  }
+}
