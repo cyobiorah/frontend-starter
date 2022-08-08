@@ -1,4 +1,4 @@
-const startApp = async () => {
+const startApp = () => {
   let page = 1;
   let info;
   let results;
@@ -49,6 +49,7 @@ const startApp = async () => {
     await fetch(url + page)
       .then((res) => res.json())
       .then((result) => {
+        console.log(result);
         info = result.info;
         results = result.results[0];
         populateTable(results);
@@ -62,4 +63,8 @@ const startApp = async () => {
   getData();
 };
 
-document.addEventListener("DOMContentLoaded", startApp);
+// document.addEventListener("DOMContentLoaded", startApp);
+document.addEventListener("DOMContentLoaded", () => {
+  startApp();
+  console.log("starting app");
+});
