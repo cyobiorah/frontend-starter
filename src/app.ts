@@ -13,6 +13,8 @@ const startApp = async () => {
   ) as HTMLButtonElement;
   const label = document.querySelector("label[data-pageview]") as HTMLElement;
 
+  label.innerHTML = `Showing Page ${page}`;
+
   nextBtn.addEventListener("click", nextClicked);
   previousBtn.addEventListener("click", previousClicked);
 
