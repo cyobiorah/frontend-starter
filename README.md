@@ -1,5 +1,6 @@
 # Frontend Assessment
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/647c903cab9d4c77b305e38325364036)](https://app.codacy.com/gh/cyobiorah/frontend-starter?utm_source=github.com&utm_medium=referral&utm_content=cyobiorah/frontend-starter&utm_campaign=Badge_Grade_Settings)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/326714f1-52fe-4114-8926-6d614eac2246/deploy-status?branch=main)](https://app.netlify.com/sites/delicate-profiterole-b8d0e5/deploys)
 
 Build and deploy a very simple frontend app for paginated data, that does the following
