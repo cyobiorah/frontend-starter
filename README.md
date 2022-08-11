@@ -1,5 +1,7 @@
 # Frontend Assessment
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/647c903cab9d4c77b305e38325364036)](https://app.codacy.com/gh/cyobiorah/frontend-starter?utm_source=github.com&utm_medium=referral&utm_content=cyobiorah/frontend-starter&utm_campaign=Badge_Grade_Settings)
+
 Build and deploy a very simple frontend app for paginated data, that does the following
 
 1.  Fetches (randomised) data from `https://randomapi.com/api/8csrgnjw?key=LEIX-GF3O-AG7I-6J84` which can be paged by appending `&page=N` where N is the page you want to fetch. E.g appending `&page=1` retrieves the first page, while `&page=4` retrieves the 4th page.
