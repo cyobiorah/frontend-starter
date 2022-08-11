@@ -1,17 +1,18 @@
+var table = document.querySelector("tbody[data-sink") as HTMLTableElement;
+var label = document.querySelector("label[data-pageview]") as HTMLElement;
+
 const startApp = () => {
   let page = 1;
   let info;
   let results;
   let url = `https://randomapi.com/api/8csrgnjw?key=LEIX-GF3O-AG7I-6J84&page=`;
 
-  let table = document.querySelector("tbody[data-sink") as HTMLTableElement;
   const previousBtn = document.querySelector(
     "button[data-prevbtn]"
   ) as HTMLButtonElement;
   const nextBtn = document.querySelector(
     "button[data-nextbtn]"
   ) as HTMLButtonElement;
-  const label = document.querySelector("label[data-pageview]") as HTMLElement;
 
   label.innerHTML = `Showing Page ${page}`;
 
