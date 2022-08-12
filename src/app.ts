@@ -14,9 +14,6 @@ const startApp = () => {
   ) as HTMLButtonElement;
   let label = document.querySelector("label[data-pageview]") as HTMLElement;
 
-  //   set label text to display initial page
-  label.innerText = `Showing Page ${page}`;
-
   //   add call function to btn event handler
   nextBtn.addEventListener("click", nextClicked);
   previousBtn.addEventListener("click", previousClicked);
