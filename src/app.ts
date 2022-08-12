@@ -1,6 +1,5 @@
 const startApp = () => {
   let page = 1;
-  let info;
   let results;
   let url = `https://randomapi.com/api/8csrgnjw?key=LEIX-GF3O-AG7I-6J84&page=`;
 
@@ -65,7 +64,6 @@ const startApp = () => {
 
   async function getData() {
     const apiResults: any = await makeRequest(url + page);
-    info = apiResults.info;
     results = apiResults.results[0];
     populateTable(results);
   }
